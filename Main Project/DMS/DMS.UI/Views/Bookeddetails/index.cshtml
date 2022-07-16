@@ -1,8 +1,5 @@
-﻿@model List<DMS.DAL.DatabaseContext.destination>
-
-@{
+﻿@{
     ViewBag.Title = "index";
-    int id = 0;
     Layout = "~/Views/Shared/adminlayout.cshtml";
 }
 
@@ -60,7 +57,6 @@
         -webkit-transition: 0.5s all;
         -moz-transition: 0.5s all;
         -o-transition: 0.5s all;
-        -ms-transition: 0.5s all;
     }
 
     .btn-style a:hover {
@@ -70,41 +66,23 @@
         -webkit-transition: 0.5s all;
         -moz-transition: 0.5s all;
         -o-transition: 0.5s all;
-        -ms-transition: 0.5s all;
     }
 </style>
 
 <section id="main-content">
     <section class="wrapper">
         <div class="row form-group">
-            <div class="title">Tours And Destinations Details</div>
-            <div class="btn-style">
-                <a href="@Url.Action("items","Adddestination")">Add a new record</a>
-            </div>
+            <div class="title">Booked Details</div>
             <table class="table-style">
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Time</th>
-                    <th>Location</th>
-                    <th>Description</th>
-                    <th>Photo</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th></th>
+                    <th></th>
                 </tr>
                 @foreach (var data in Model)
                 {
                     <tr>
-                        <td>@(++id)</td>
-                        <td>@(data.dname)</td>
-                        <td>@(data.dtime)</td>
-                        <td>@(data.location)</td>
-                        <td>@(data.description)</td>
-                        <td>
-                            <img src="@Url.Content(data.photo+"/"+data.photo_name)" height="200" width="200" />
-                        </td>
-                        <td><a href="@Url.Action("edit",new {id = data.id})">Edit</a></td>
-                        <td><a href="@Url.Action("deletedata",new {id = data.id})">Delete</a></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 }
             </table>
