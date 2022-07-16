@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = "~/Views/Shared/adminlayout.cshtml";
+    ViewBag.Title = "AddNew";
+}
+    <div>
+        @using (Html.BeginForm("SaveImage", "Gallery", FormMethod.Post, new { @class = "", @enctype = "multipart / form - data" }))
+        {
+            <div class="row form-group">
+                <label class="col-md-2">Select Photo</label>
+                <div class="col-md-4">
+                    <input type="file" class="form-control" name="SelectedFile" />
+                </div>
+                <label class="col-md-2">Destination name</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="destination_name" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <input type="submit" class="btn btn-success" value="Save" />
+            </div>
+        }
+    </div>
+

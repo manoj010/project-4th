@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = "~/Views/Shared/adminlayout.cshtml";
+    ViewBag.Title = "Index";
+    int sn = 0;
+}
+
+<table class="table table-bordered">
+    <tr>
+        <td>SN</td>
+        <td>Uploaded File</td>
+    </tr>
+    @foreach(var data in Model)
+    {
+        <tr>
+            <td>@(++sn)</td>
+            <td>
+                <img src="@Url.Content(data.photo_path+"/"+data.description_name)" height="200" width="200" />
+            </td>
+        </tr>
+    }
+</table>
+

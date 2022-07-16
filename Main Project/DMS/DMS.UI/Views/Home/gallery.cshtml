@@ -1,0 +1,209 @@
+﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    /*Style for search Button*/
+    .searchBox {
+        margin-left: 800px;
+    }
+
+    .searchbar {
+        width: 100%;
+        max-width: 250px;
+        display: inline-flex;
+    }
+
+    .searchbar--max-width {
+        max-width: 100%;
+    }
+
+    .searchbar__input {
+        flex-grow: 1;
+        padding: 10px;
+        outline: none;
+        border: 1px solid #696969;
+        border-radius: 5px 0 0 5px;
+        background: #F4FAF9;
+        transition: background 0.25s, box-shadow 0.25s;
+    }
+
+        .searchbar__input:focus {
+            background: white;
+            box-shadow: 0 0 2px #696969;
+        }
+
+        .searchbar__input::placeholder {
+            color: #696969;
+        }
+
+    .searchbar__button {
+        width: 40px;
+        background: #696969;
+        color: #ffffff;
+        outline: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        user-select: none;
+    }
+
+        .searchbar__button:active {
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.25);
+        }
+    /*style for search button ends*/
+</style>
+
+<!-- banner -->
+<div class="inner_banner_agile">
+
+</div>
+<!--//banner -->
+<!-- short -->
+<div class="services-breadcrumb">
+    <div class="inner_breadcrumb">
+        <ul class="short_ls">
+            <li>
+                <a href="@Url.Action("Index","Home")">Home</a>
+                <span>/ /</span>
+            </li>
+            <li>Gallery</li>
+        </ul>
+    </div>
+</div>
+<!-- //short-->
+<!-- //banner -->
+<!-- gallery -->
+<div class="searchBox">
+    @*@using (Html.BeginForm("Search", "forSeries", FormMethod.Post))*@
+    
+        <div class="searchbar">
+            <input type="text" class="searchbar__input" name="name1" placeholder="Search Series">
+            <button type="submit" class="searchbar__button">
+                <i class="material-icons">search</i>
+            </button>
+        </div>
+    @*}*@
+</div>
+<div class="gallery">
+    <div class="container">
+        <h3 class="title">Our Gallery</h3>
+        <div class="w3layouts_gallery_grids">
+            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
+                <a href="~/Content/TravelAndTours/images/g1.jpg" class="lsb-preview" data-lsb-group="header">
+                    <div class="w3layouts_news_grid">
+                        <img src="~/Content/TravelAndTours/images/g1.jpg" alt=" " class="img-responsive">
+                        <div class="w3layouts_news_grid_pos">
+                            <div class="wthree_text">
+                                <h3>Travel Tours</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
+                <a href="~/Content/TravelAndTours/images/g2.jpg" class="lsb-preview" data-lsb-group="header">
+                    <div class="w3layouts_news_grid">
+                        <img src="~/Content/TravelAndTours/images/g2.jpg" alt=" " class="img-responsive">
+                        <div class="w3layouts_news_grid_pos">
+                            <div class="wthree_text">
+                                <h3>Travel Tours</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
+                <a href="~/Content/TravelAndTours/images/g3.jpg" class="lsb-preview" data-lsb-group="header">
+                    <div class="w3layouts_news_grid">
+                        <img src="~/Content/TravelAndTours/images/g3.jpg" alt=" " class="img-responsive">
+                        <div class="w3layouts_news_grid_pos">
+                            <div class="wthree_text">
+                                <h3>Travel Tours</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
+                <a href="~/Content/TravelAndTours/images/g4.jpg" class="lsb-preview" data-lsb-group="header">
+                    <div class="w3layouts_news_grid">
+                        <img src="~/Content/TravelAndTours/images/g4.jpg" alt=" " class="img-responsive">
+                        <div class="w3layouts_news_grid_pos">
+                            <div class="wthree_text">
+                                <h3>Travel Tours</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
+                <a href="~/Content/TravelAndTours/images/g5.jpg" class="lsb-preview" data-lsb-group="header">
+                    <div class="w3layouts_news_grid">
+                        <img src="~/Content/TravelAndTours/images/g5.jpg" alt=" " class="img-responsive">
+                        <div class="w3layouts_news_grid_pos">
+                            <div class="wthree_text">
+                                <h3>Travel Tours</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
+                <a href="~/Content/TravelAndTours/images/g6.jpg" class="lsb-preview" data-lsb-group="header">
+                    <div class="w3layouts_news_grid">
+                        <img src="~/Content/TravelAndTours/images/g6.jpg" alt=" " class="img-responsive">
+                        <div class="w3layouts_news_grid_pos">
+                            <div class="wthree_text">
+                                <h3>Travel Tours</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
+                <a href="~/Content/TravelAndTours/images/g7.jpg" class="lsb-preview" data-lsb-group="header">
+                    <div class="w3layouts_news_grid">
+                        <img src="~/Content/TravelAndTours/images/g7.jpg" alt=" " class="img-responsive">
+                        <div class="w3layouts_news_grid_pos">
+                            <div class="wthree_text">
+                                <h3>Travel Tours</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
+                <a href="~/Content/TravelAndTours/images/g8.jpg" class="lsb-preview" data-lsb-group="header">
+                    <div class="w3layouts_news_grid">
+                        <img src="~/Content/TravelAndTours/images/g8.jpg" alt=" " class="img-responsive">
+                        <div class="w3layouts_news_grid_pos">
+                            <div class="wthree_text">
+                                <h3>Travel Tours</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
+                <a href="~/Content/TravelAndTours/images/g9.jpg" class="lsb-preview" data-lsb-group="header">
+                    <div class="w3layouts_news_grid">
+                        <img src="~/Content/TravelAndTours/images/g9.jpg" alt=" " class="img-responsive">
+                        <div class="w3layouts_news_grid_pos">
+                            <div class="wthree_text">
+                                <h3>Travel Tours</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!-- //gallery -->

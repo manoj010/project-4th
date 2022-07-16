@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Items";
+    Layout = "~/Views/Shared/adminlayout.cshtml";
+}
+
+<style>
+    .title {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .form-content {
+        margin-top: 15px;
+    }
+
+    .btn-style {
+        border: 0;
+        border-radius: 5px;
+        background: #009879;
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        font-size: 15px;
+        padding: 4px 15px;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+    }
+
+    .btn-style:hover{
+        color: #fff;
+        background: #000;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+    }
+
+</style>
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row form-group">
+            <div class="title">Tours And Destinations Details</div>
+            @using (Html.BeginForm("SaveData", null, FormMethod.Post, new { @enctype = "multipart/form-data" }))
+            {
+                <div class="form-content">
+                    <label>Title</label>
+                    <input type="text" name="dname" class="form-control" />
+                </div>
+
+                <div class="form-content">
+                    <label>Duration</label>
+                    <input type="text" name="dtime" class="form-control" />
+                </div>
+
+                <div class="form-content">
+                    <label>Location</label>
+                    <input type="text" name="location" class="form-control" />
+                </div>
+
+                <div class="form-content">
+                    <label>Description</label>
+                    <input type="text" name="description" class="form-control" />
+                </div>
+
+                <div class="form-content">
+                    <label>Photo</label>
+                    <input type="file" name="photo" class="form-control" />
+                </div>
+
+                <div class="form-content">
+                    <input type="Submit" class="btn-style" value="Save" />
+                </div>
+             }
+        </div>
+</section>
+</section>

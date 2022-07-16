@@ -1,0 +1,98 @@
+﻿@model DMS.Models.LoginViewModel
+@{
+                /**/
+
+                ViewBag.Title = "Login";
+                Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<style>
+    .login {
+        background-image: url('../../Content/assets/images/travel.jpg');
+        background-repeat: no-repeat;
+        /*background-position: center;*/
+        background-size: 100%;
+    }
+    .main-login{
+        color:bisque;
+    }
+    .main-login .row{
+        background-color:bisque;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(x => x.returnUrl)
+    <div class="login row">
+        <div class="main-login col-xs-12 col-xs-offset-2 col-sm-6 col-sm-offset-3">
+            <!-- start: LOGIN BOX -->
+            <div class="row padBox">
+                
+                <div class="col-sm-6">
+                    <div class="thumbnail">
+                        <img width="300px" src="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/WOPA160517_D056-resized.jpg?crop=864%2C0%2C1728%2C2304&wid=600&hei=800&scl=2.88" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="">
+                        <h3 style="font-weight:bold" align="center">
+                            Travel &Tours
+                        </h3>
+                        <form class="form-login" action="index.html">
+                            @Html.Raw(FlashBag.showMessage())
+
+                            <fieldset>
+                                <div class="">
+                                    <div class="">
+                                        <span class="input-icon">
+                                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @Id = "username", @placeholder = "User Name" } })
+                                            <i class="fa fa-user"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <div class="">
+                                        <span class="input-icon">
+                                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @Id = "password", @placeholder = "Password" } })
+                                            <i class="fa fa-lock"></i>
+                                        </span>
+
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <button type="submit" class="btn btn-danger btn-block">
+                                                Login <i class="fa fa-arrow-circle-right"></i>
+                                            </button>
+                                            <br />
+                                            <a href="@Url.Action("ForgotPassword","Account")" class="forget_pass" target="">Forgot Password?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <!-- start: COPYRIGHT -->
+                        <div class="copyright" style="color:black;">
+                            Copyright &copy; @DateTime.Now.Year Travel & Tours. All rights reserved.
+                        </div>
+                        <!-- end: COPYRIGHT -->
+                    </div>
+                </div>
+
+            </div>
+            <!-- end: LOGIN BOX -->
+            <!-- start: FORGOT BOX -->
+        </div>
+
+        <div id="bg_bottom_login" class="">
+
+        </div>
+
+    </div>
+
+
+
+}
