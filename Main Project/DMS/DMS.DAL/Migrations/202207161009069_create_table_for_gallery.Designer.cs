@@ -13,7 +13,7 @@ namespace DMS.DAL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202207131344316_create_table_for_gallery"; }
+            get { return "202207161009069_create_table_for_gallery"; }
         }
         
         string IMigrationMetadata.Source

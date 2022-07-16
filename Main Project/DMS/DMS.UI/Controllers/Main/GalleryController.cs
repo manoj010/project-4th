@@ -20,7 +20,8 @@ namespace DMS.Controllers.Main
 
         public ActionResult AddNew()
         {
-            return View();
+            List<gallery> data = db.galleries.ToList();
+            return View(data);
         }
 
         public ActionResult SaveImage(HttpPostedFileBase SelectedFile)
@@ -34,8 +35,8 @@ namespace DMS.Controllers.Main
             }
             SelectedFile.SaveAs(new_path);
             gallery gallery = new gallery();
-            gallery.photo_path = "~/ Uploads";
-            gallery.destination_name = filename;
+            gallery.photo = "~/ Uploads";
+            gallery.photo_name = filename;
             db.galleries.Add(gallery);
             db.SaveChanges();
 

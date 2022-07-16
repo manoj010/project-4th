@@ -9,8 +9,9 @@ namespace DMS.DAL.Migrations
         {
             Sql(@"create table gallery(
                 id int NOT NULL primary key identity(1,1),
-                photo_path nvarchar(255) NOT NULL,
-                destination_name nvarchar(255) NOt NUll
+                photo nvarchar(255) NOT NULL,
+                photo_name nvarchar(255) NOT NULL,
+                destination_name nvarchar(255) NOT NULL
             )");
         }
         
