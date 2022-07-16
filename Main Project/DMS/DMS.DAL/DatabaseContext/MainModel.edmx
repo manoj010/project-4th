@@ -108,21 +108,13 @@
           <Property Name="emp01updated_date_nep" Type="char" MaxLength="10" Nullable="false" />
           <Property Name="emp01update_date_eng" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityType Name="employee_data">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="name" Type="nchar" MaxLength="30" Nullable="false" />
-          <Property Name="address" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="contact" Type="nchar" MaxLength="15" Nullable="false" />
-        </EntityType>
         <EntityType Name="gallery">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="photo_path" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="photo" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="photo_name" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="destination_name" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="lvl01employee_levels">
@@ -147,8 +139,8 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="contact" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="UserCodes">
@@ -259,7 +251,6 @@
           <EntitySet Name="des01designations" EntityType="Self.des01designations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="destination" EntityType="Self.destination" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="emp01employee" EntityType="Self.emp01employee" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="employee_data" EntityType="Self.employee_data" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="gallery" EntityType="Self.gallery" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="lvl01employee_levels" EntityType="Self.lvl01employee_levels" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="test" EntityType="Self.test" Schema="dbo" store:Type="Tables" />
@@ -300,7 +291,6 @@
           <EntitySet Name="dep01department" EntityType="BIT4thSemModel.dep01department" />
           <EntitySet Name="des01designations" EntityType="BIT4thSemModel.des01designations" />
           <EntitySet Name="emp01employee" EntityType="BIT4thSemModel.emp01employee" />
-          <EntitySet Name="employee_data" EntityType="BIT4thSemModel.employee_data" />
           <EntitySet Name="lvl01employee_levels" EntityType="BIT4thSemModel.lvl01employee_levels" />
           <EntitySet Name="tests" EntityType="BIT4thSemModel.test" />
           <EntitySet Name="UserCodes" EntityType="BIT4thSemModel.UserCode" />
@@ -432,15 +422,6 @@
           <NavigationProperty Name="lvl01employee_levels" Relationship="BIT4thSemModel.FK_emp01employee_lvl01employee_levels" FromRole="emp01employee" ToRole="lvl01employee_levels" />
           <NavigationProperty Name="usr05users" Relationship="BIT4thSemModel.FK_usr05users_emp01employee" FromRole="emp01employee" ToRole="usr05users" />
         </EntityType>
-        <EntityType Name="employee_data">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="address" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="contact" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
-        </EntityType>
         <EntityType Name="lvl01employee_levels">
           <Key>
             <PropertyRef Name="lvl01uin" />
@@ -464,8 +445,8 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="contact" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="UserCode">
@@ -588,7 +569,8 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="photo_path" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="photo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="photo_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="destination_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
@@ -692,16 +674,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="employee_data">
-            <EntityTypeMapping TypeName="BIT4thSemModel.employee_data">
-              <MappingFragment StoreEntitySet="employee_data">
-                <ScalarProperty Name="contact" ColumnName="contact" />
-                <ScalarProperty Name="address" ColumnName="address" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="lvl01employee_levels">
             <EntityTypeMapping TypeName="BIT4thSemModel.lvl01employee_levels">
               <MappingFragment StoreEntitySet="lvl01employee_levels">
@@ -778,7 +750,8 @@
             <EntityTypeMapping TypeName="BIT4thSemModel.gallery">
               <MappingFragment StoreEntitySet="gallery">
                 <ScalarProperty Name="destination_name" ColumnName="destination_name" />
-                <ScalarProperty Name="photo_path" ColumnName="photo_path" />
+                <ScalarProperty Name="photo_name" ColumnName="photo_name" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -141,9 +141,6 @@
     <Compile Include="DatabaseContext\emp01employee.cs">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseContext\employee_data.cs">
-      <DependentUpon>MainModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DatabaseContext\gallery.cs">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
@@ -224,9 +221,9 @@
     <Compile Include="Migrations\202205300640533_create_table_for_destination.Designer.cs">
       <DependentUpon>202205300640533_create_table_for_destination.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202207131344316_create_table_for_gallery.cs" />
-    <Compile Include="Migrations\202207131344316_create_table_for_gallery.Designer.cs">
-      <DependentUpon>202207131344316_create_table_for_gallery.cs</DependentUpon>
+    <Compile Include="Migrations\202207161009069_create_table_for_gallery.cs" />
+    <Compile Include="Migrations\202207161009069_create_table_for_gallery.Designer.cs">
+      <DependentUpon>202207161009069_create_table_for_gallery.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -323,8 +320,8 @@
     <EmbeddedResource Include="Migrations\202205300640533_create_table_for_destination.resx">
       <DependentUpon>202205300640533_create_table_for_destination.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202207131344316_create_table_for_gallery.resx">
-      <DependentUpon>202207131344316_create_table_for_gallery.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202207161009069_create_table_for_gallery.resx">
+      <DependentUpon>202207161009069_create_table_for_gallery.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

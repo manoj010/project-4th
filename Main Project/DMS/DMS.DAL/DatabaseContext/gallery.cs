@@ -15,7 +15,8 @@ namespace DMS.DAL.DatabaseContext
     public partial class gallery
     {
         public int id { get; set; }
-        public string photo_path { get; set; }
+        public string photo { get; set; }
+        public string photo_name { get; set; }
         public string destination_name { get; set; }
     }
 }

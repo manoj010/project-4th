@@ -129,7 +129,7 @@
 <div class="trips-section">
     <div class="container">
         <h3 class="title">Beautiful Tours</h3>
-        @foreach (var data in Model)
+        @foreach (var data in Model.Take(3))
         {
             <div class="col-xs-4 exce-grid1-mmstyle">
                 <img src="@Url.Content(data.photo + "/" + data.photo_name)">

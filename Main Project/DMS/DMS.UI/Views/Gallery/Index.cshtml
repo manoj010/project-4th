@@ -5,19 +5,31 @@
     int sn = 0;
 }
 
-<table class="table table-bordered">
-    <tr>
-        <td>SN</td>
-        <td>Uploaded File</td>
-    </tr>
-    @foreach(var data in Model)
-    {
-        <tr>
-            <td>@(++sn)</td>
-            <td>
-                <img src="@Url.Content(data.photo_path+"/"+data.description_name)" height="200" width="200" />
-            </td>
-        </tr>
-    }
-</table>
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row form-group">
+            <div class="title">Tours And Destinations Details</div>
+            <div class="btn-style">
+                <a href="@Url.Action("AddNew","Gallery")">Add a new record</a>
+            </div>
 
+            <table class="table-style">
+                <tr>
+                    <td>SN</td>
+                    <td>Uploaded File</td>
+                    <td>Destination name</td>
+                </tr>
+                @foreach (var data in Model)
+                {
+                    <tr>
+                        <td>@(++sn)</td>
+                        <td>
+                            <img src="@Url.Content(data.photo+"/"+data.photo_name)" height="200" width="200" />
+                        </td>
+                        <td>@(data.destination_name)</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </section>
+</section>
