@@ -1496,6 +1496,8 @@
     <Content Include="Views\Home\beautifultours.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Gallery\AddNew.cshtml" />
+    <Content Include="Views\Bookeddetails\index.cshtml" />
+    <Content Include="Views\Contactdetails\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1504,7 +1506,6 @@
     <Folder Include="private\ExcelFormat\" />
     <Folder Include="private\Import\" />
     <Folder Include="Uploads\" />
-    <Folder Include="Views\Beautifultours\" />
     <Folder Include="Views\Menu\EditorTemplates\" />
   </ItemGroup>
   <ItemGroup>
