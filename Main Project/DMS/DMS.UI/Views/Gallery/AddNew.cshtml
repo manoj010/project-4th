@@ -3,22 +3,68 @@
     Layout = "~/Views/Shared/adminlayout.cshtml";
     ViewBag.Title = "AddNew";
 }
-    <div>
-        @using (Html.BeginForm("SaveImage", "Gallery", FormMethod.Post, new { @class = "", @enctype = "multipart / form - data" }))
-        {
-            <div class="row form-group">
-                <label class="col-md-2">Select Photo</label>
-                <div class="col-md-4">
-                    <input type="file" class="form-control" name="SelectedFile" />
-                </div>
-                <label class="col-md-2">Destination name</label>
-                <div class="col-md-4">
-                    <input type="text" class="form-control" name="destination_name" />
-                </div>
-            </div>
-            <div class="row form-group">
-                <input type="submit" class="btn btn-success" value="Save" />
-            </div>
+
+<style>
+    .title {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .form-content {
+        margin-top: 15px;
+    }
+
+    .btn-style {
+        border: 0;
+        border-radius: 5px;
+        background: #009879;
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        font-size: 15px;
+        padding: 4px 15px;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+    }
+
+        .btn-style:hover {
+            color: #fff;
+            background: #000;
+            transition: 0.5s all;
+            -webkit-transition: 0.5s all;
+            -moz-transition: 0.5s all;
+            -o-transition: 0.5s all;
+            -ms-transition: 0.5s all;
         }
-    </div>
+</style>
+
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row form-group">
+            <div class="title">Gallery Details</div>
+            @using (Html.BeginForm("SaveImage", "Gallery", FormMethod.Post, new { @class = "", @enctype = "multipart / form - data" }))
+            {
+                <div class="row form-group">
+                    <label class="col-md-2">Select Photo</label>
+                    <div class="col-md-4">
+                        <input type="file" class="form-control" name="photo" />
+                    </div>
+                    <label class="col-md-2">Destination name</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="destination_name" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <input type="submit" class="btn btn-success" value="Save" />
+                </div>
+            }
+        </div>
+    </section>
+</section>
+
 

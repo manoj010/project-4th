@@ -49,8 +49,9 @@ namespace DMS.Controllers
         }
         public ActionResult gallery()
         {
+            List<gallery> data = db.galleries.ToList();
             ViewBag.Message = "Your gallery page.";
-            return View();
+            return View(data);
         }
 
         public ActionResult Contact()
@@ -61,7 +62,8 @@ namespace DMS.Controllers
         public ActionResult beautifultours()
         {
             ViewBag.Message = "Your tours page.";
-            return View();
+            List<destination> data = db.destinations.ToList();
+            return View(data);
         }
 
         public async Task<ActionResult>Dashboard()

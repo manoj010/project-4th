@@ -5,6 +5,74 @@
     int sn = 0;
 }
 
+<style>
+    .table-style {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        min-width: 400px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+        .table-style th {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: center;
+            font-weight: bold;
+            padding: 12px 15px;
+        }
+
+        .table-style td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 2px solid #ffffff;
+        }
+
+        .table-style tr:nth-of-type(even) {
+            background-color: #c2c0c0;
+        }
+
+        .table-style tr:nth-of-type(odd) {
+            background-color: #d9d7d7;
+        }
+
+        .table-style tr:last-of-type {
+            border-bottom: 3px solid #009879;
+        }
+
+    .title {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .btn-style a {
+        border-radius: 5px;
+        background: #009879;
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        font-size: 15px;
+        padding: 12px 20px;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+    }
+
+        .btn-style a:hover {
+            color: #fff;
+            background: #000;
+            transition: 0.5s all;
+            -webkit-transition: 0.5s all;
+            -moz-transition: 0.5s all;
+            -o-transition: 0.5s all;
+            -ms-transition: 0.5s all;
+        }
+</style>
+
 <section id="main-content">
     <section class="wrapper">
         <div class="row form-group">
@@ -15,19 +83,21 @@
 
             <table class="table-style">
                 <tr>
-                    <td>SN</td>
-                    <td>Uploaded File</td>
-                    <td>Destination name</td>
+                    <th>SN</th>
+                    <th>Uploaded File</th>
+                    <th>Destination name</th>
+                    <th>Delete</th>
                 </tr>
                 @foreach (var data in Model)
                 {
-                    <tr>
-                        <td>@(++sn)</td>
-                        <td>
-                            <img src="@Url.Content(data.photo+"/"+data.photo_name)" height="200" width="200" />
-                        </td>
-                        <td>@(data.destination_name)</td>
-                    </tr>
+            <tr>
+                <td>@(++sn)</td>
+                <td>
+                    <img src="@Url.Content(data.photo+"/"+data.photo_name)" height="200" width="200" />
+                </td>
+                <td>@(data.destination_name)</td>
+                <td><a href="@Url.Action("deletedata",new {id = data.id})">Delete</a></td>
+            </tr>
                 }
             </table>
         </div>

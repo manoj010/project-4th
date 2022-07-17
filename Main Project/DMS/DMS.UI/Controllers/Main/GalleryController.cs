@@ -24,16 +24,16 @@ namespace DMS.Controllers.Main
             return View(data);
         }
 
-        public ActionResult SaveImage(HttpPostedFileBase SelectedFile)
+        public ActionResult SaveImage(HttpPostedFileBase photo)
         {
             string path = Server.MapPath("~/Uploads");
-            string filename = SelectedFile.FileName;
+            string filename = photo.FileName;
             string new_path = path + "/" + filename;
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
-            SelectedFile.SaveAs(new_path);
+            photo.SaveAs(new_path);
             gallery gallery = new gallery();
             gallery.photo = "~/ Uploads";
             gallery.photo_name = filename;
