@@ -1,4 +1,4 @@
-﻿@model List<DMS.DAL.DatabaseContext.destination>
+﻿@model List<DMS.DAL.DatabaseContext.destinationn>
 
 @{
     ViewBag.Title = "index";
@@ -87,6 +87,7 @@
                     <th>Name</th>
                     <th>Time</th>
                     <th>Location</th>
+                    <th>Price</th>
                     <th>Description</th>
                     <th>Photo</th>
                     <th>Edit</th>
@@ -99,6 +100,7 @@
                         <td>@(data.dname)</td>
                         <td>@(data.dtime)</td>
                         <td>@(data.location)</td>
+                        <td>@(data.price)</td>
                         <td>@(data.description)</td>
                         <td>
                             <img src="@Url.Content(data.photo+"/"+data.photo_name)" height="200" width="200" />

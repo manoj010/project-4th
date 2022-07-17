@@ -12,17 +12,17 @@ namespace DMS.Controllers.Main
     public class AdddestinationController : Controller
     {
         MainEntities db = new MainEntities();
-        // GET: Adddestination
+        //GET: Adddestination
         public ActionResult index()
         {
-            List<destination> all_data = db.destinations.ToList();
+            List<destinationn> all_data = db.destinationns.ToList();
             return View(all_data);
 
         }
 
         public ActionResult items()
         {
-            List<destination> all_data = db.destinations.ToList();
+            List<destinationn> all_data = db.destinationns.ToList();
             return View(all_data);
         }
 
@@ -32,7 +32,7 @@ namespace DMS.Controllers.Main
 
             return View();
         }
-        public ActionResult Savedata(destination destination, HttpPostedFileBase photo)
+        public ActionResult Savedata(destinationn destination, HttpPostedFileBase photo)
         {
             string path = Server.MapPath("~/Uploads");
             string filename = photo.FileName;
@@ -44,13 +44,13 @@ namespace DMS.Controllers.Main
             photo.SaveAs(new_path);
             destination.photo = "~/Uploads";
             destination.photo_name = filename;
-            db.destinations.Add(destination);
+            db.destinationns.Add(destination);
             db.SaveChanges();
             return RedirectToAction("index");
         }
         public ActionResult edit(int id, HttpPostedFileBase photo)
         {
-            destination destination = db.destinations.Find(id);
+            destinationn destination = db.destinationns.Find(id);
             string path = Server.MapPath("~/Uploads");
             string filename = photo.FileName;
             string new_path = path + "/" + filename;
@@ -61,13 +61,13 @@ namespace DMS.Controllers.Main
             photo.SaveAs(new_path);
             destination.photo = "~/Uploads";
             destination.photo_name = filename;
-            db.destinations.Add(destination);
+            db.destinationns.Add(destination);
             db.SaveChanges();
             //return RedirectToAction("index");
             //employee data=db.employees.firstordefault(x=>x.id==id);
             return View(destination);
         }
-        public ActionResult Updatedata(destination destination)
+        public ActionResult Updatedata(destinationn destination)
         {
 
             db.Entry(destination).State = EntityState.Modified;
@@ -76,8 +76,8 @@ namespace DMS.Controllers.Main
         }
         public ActionResult deletedata(int id)
         {
-            destination data = db.destinations.Find(id);
-            db.destinations.Remove(data);
+            destinationn data = db.destinationns.Find(id);
+            db.destinationns.Remove(data);
             db.SaveChanges();
             return RedirectToAction("index");
         }

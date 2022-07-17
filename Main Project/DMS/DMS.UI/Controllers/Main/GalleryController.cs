@@ -24,9 +24,9 @@ namespace DMS.Controllers.Main
             return View(data);
         }
 
-        public ActionResult SaveImage(HttpPostedFileBase photo)
+        public ActionResult Savedata(gallerydata gallerydata, HttpPostedFileBase photo)
         {
-            string path = Server.MapPath("~/Uploads");
+            string path = Server.MapPath("~/Galleryphoto");
             string filename = photo.FileName;
             string new_path = path + "/" + filename;
             if (!Directory.Exists(path))
@@ -34,13 +34,18 @@ namespace DMS.Controllers.Main
                 Directory.CreateDirectory(path);
             }
             photo.SaveAs(new_path);
-            gallerydata gallery = new gallerydata();
-            gallery.photo = "~/ Uploads";
-            gallery.photo_name = filename;
-            db.gallerydatas.Add(gallery);
+            gallerydata.photo = "~/Galleryphoto";
+            gallerydata.photo_name = filename;
+            db.gallerydatas.Add(gallerydata);
             db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
-
+        public ActionResult deletedata(int id)
+        {
+            gallerydata data = db.gallerydatas.Find(id);
+            db.gallerydatas.Remove(data);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 

@@ -19,8 +19,8 @@
         <AssociationConnector Association="BIT4thSemModel.FK_emp01employee_des01designations" />
         <AssociationConnector Association="BIT4thSemModel.FK_emp01employee_lvl01employee_levels" />
         <AssociationConnector Association="BIT4thSemModel.FK_usr05users_emp01employee" />
-        <EntityTypeShape EntityType="BIT4thSemModel.destination" Width="1.5" PointX="8.375" PointY="7.75" />
         <EntityTypeShape EntityType="BIT4thSemModel.gallerydata" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BIT4thSemModel.destinationn" Width="1.5" PointX="8.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -7,13 +7,13 @@ namespace DMS.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class create_table_for_destination : IMigrationMetadata
+    public sealed partial class create_table_for_destinationn : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(create_table_for_destination));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(create_table_for_destinationn));
         
         string IMigrationMetadata.Id
         {
-            get { return "202205300640533_create_table_for_destination"; }
+            get { return "202207170552412_create_table_for_destinationn"; }
         }
         
         string IMigrationMetadata.Source

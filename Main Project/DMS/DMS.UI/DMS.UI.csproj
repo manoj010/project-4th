@@ -1503,6 +1503,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Automappers\Profiles\" />
     <Folder Include="Content\assets\plugins\bootstrap-datepicker\css\" />
+    <Folder Include="Galleryphoto\" />
     <Folder Include="private\ExcelFormat\" />
     <Folder Include="private\Import\" />
     <Folder Include="Uploads\" />

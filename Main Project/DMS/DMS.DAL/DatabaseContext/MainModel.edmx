@@ -71,7 +71,7 @@
           <Property Name="des01updated_date_eng" Type="datetime" Nullable="false" />
           <Property Name="des01code" Type="varchar" MaxLength="25" Nullable="false" />
         </EntityType>
-        <EntityType Name="destination">
+        <EntityType Name="destinationn">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -79,6 +79,7 @@
           <Property Name="dname" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="dtime" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="location" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="photo" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="photo_name" Type="nvarchar" MaxLength="255" Nullable="false" />
@@ -240,7 +241,7 @@
           <EntitySet Name="cfg01configurations" EntityType="Self.cfg01configurations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dep01department" EntityType="Self.dep01department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="des01designations" EntityType="Self.des01designations" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="destination" EntityType="Self.destination" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="destinationn" EntityType="Self.destinationn" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="emp01employee" EntityType="Self.emp01employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="gallerydata" EntityType="Self.gallerydata" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="lvl01employee_levels" EntityType="Self.lvl01employee_levels" Schema="dbo" store:Type="Tables" />
@@ -308,8 +309,8 @@
             <End Role="emp01employee" EntitySet="emp01employee" />
             <End Role="usr05users" EntitySet="usr05users" />
           </AssociationSet>
-          <EntitySet Name="destinations" EntityType="BIT4thSemModel.destination" />
           <EntitySet Name="gallerydatas" EntityType="BIT4thSemModel.gallerydata" />
+          <EntitySet Name="destinationns" EntityType="BIT4thSemModel.destinationn" />
         </EntityContainer>
         <EntityType Name="bra01branches">
           <Key>
@@ -532,18 +533,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="destination">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dname" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="dtime" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="location" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="photo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="photo_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="gallerydata">
           <Key>
             <PropertyRef Name="id" />
@@ -552,6 +541,19 @@
           <Property Name="photo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="photo_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="destination_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="destinationn">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dname" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="dtime" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="location" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="photo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="photo_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -703,25 +705,26 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="destinations">
-            <EntityTypeMapping TypeName="BIT4thSemModel.destination">
-              <MappingFragment StoreEntitySet="destination">
-                <ScalarProperty Name="photo_name" ColumnName="photo_name" />
-                <ScalarProperty Name="photo" ColumnName="photo" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="location" ColumnName="location" />
-                <ScalarProperty Name="dtime" ColumnName="dtime" />
-                <ScalarProperty Name="dname" ColumnName="dname" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="gallerydatas">
             <EntityTypeMapping TypeName="BIT4thSemModel.gallerydata">
               <MappingFragment StoreEntitySet="gallerydata">
                 <ScalarProperty Name="destination_name" ColumnName="destination_name" />
                 <ScalarProperty Name="photo_name" ColumnName="photo_name" />
                 <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="destinationns">
+            <EntityTypeMapping TypeName="BIT4thSemModel.destinationn">
+              <MappingFragment StoreEntitySet="destinationn">
+                <ScalarProperty Name="photo_name" ColumnName="photo_name" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="dtime" ColumnName="dtime" />
+                <ScalarProperty Name="dname" ColumnName="dname" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -1,4 +1,4 @@
-﻿@model DMS.DAL.DatabaseContext.destination
+﻿@model DMS.DAL.DatabaseContext.destinationn
 
 @{
     ViewBag.Title = "Edit";
@@ -64,6 +64,11 @@
                 <div class="form-content">
                     <label>Location</label>
                     <input type="text" name="location" class="form-control" value="@Model.location" />
+                </div>
+
+                <div class="form-content">
+                    <label>Price</label>
+                    <input type="text" name="price" class="form-control" value="@Model.price" />
                 </div>
 
                 <div class="form-content">

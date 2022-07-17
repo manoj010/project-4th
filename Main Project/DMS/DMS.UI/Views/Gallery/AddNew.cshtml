@@ -46,7 +46,7 @@
     <section class="wrapper">
         <div class="row form-group">
             <div class="title">Gallery Details</div>
-            @using (Html.BeginForm("SaveImage", "Gallery", FormMethod.Post, new { @class = "", @enctype = "multipart / form - data" }))
+            @using (Html.BeginForm("SaveData", null, FormMethod.Post, new { @class = "", @enctype = "multipart / form - data" }))
             {
                 <div class="row form-group">
                     <label class="col-md-2">Select Photo</label>

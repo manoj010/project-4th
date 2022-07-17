@@ -135,7 +135,7 @@
     <Compile Include="DatabaseContext\des01designations.cs">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseContext\destination.cs">
+    <Compile Include="DatabaseContext\destinationn.cs">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DatabaseContext\emp01employee.cs">
@@ -214,13 +214,13 @@
     <Compile Include="Migrations\202204210224449_added_new_table.Designer.cs">
       <DependentUpon>202204210224449_added_new_table.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205300640533_create_table_for_destination.cs" />
-    <Compile Include="Migrations\202205300640533_create_table_for_destination.Designer.cs">
-      <DependentUpon>202205300640533_create_table_for_destination.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202207170456597_create_table_for_gallerydata.cs" />
     <Compile Include="Migrations\202207170456597_create_table_for_gallerydata.Designer.cs">
       <DependentUpon>202207170456597_create_table_for_gallerydata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207170552412_create_table_for_destinationn.cs" />
+    <Compile Include="Migrations\202207170552412_create_table_for_destinationn.Designer.cs">
+      <DependentUpon>202207170552412_create_table_for_destinationn.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -314,11 +314,11 @@
     <EmbeddedResource Include="Migrations\202204210224449_added_new_table.resx">
       <DependentUpon>202204210224449_added_new_table.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205300640533_create_table_for_destination.resx">
-      <DependentUpon>202205300640533_create_table_for_destination.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202207170456597_create_table_for_gallerydata.resx">
       <DependentUpon>202207170456597_create_table_for_gallerydata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207170552412_create_table_for_destinationn.resx">
+      <DependentUpon>202207170552412_create_table_for_destinationn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

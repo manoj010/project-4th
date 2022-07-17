@@ -33,7 +33,7 @@ namespace DMS.DAL.DatabaseContext
         public virtual DbSet<lvl01employee_levels> lvl01employee_levels { get; set; }
         public virtual DbSet<UserCode> UserCodes { get; set; }
         public virtual DbSet<usr05users> usr05users { get; set; }
-        public virtual DbSet<destination> destinations { get; set; }
         public virtual DbSet<gallerydata> gallerydatas { get; set; }
+        public virtual DbSet<destinationn> destinationns { get; set; }
     }
 }

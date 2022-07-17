@@ -38,7 +38,7 @@ namespace DMS.Controllers
 
         public ActionResult Index()
         {
-            List<destination> data = db.destinations.ToList();
+            List<destinationn> data = db.destinationns.ToList();
             return View(data);
         }
 
@@ -49,8 +49,8 @@ namespace DMS.Controllers
         }
         public ActionResult gallery()
         {
-            List<gallerydata> data = db.gallerydatas.ToList();
             ViewBag.Message = "Your gallery page.";
+            List<gallerydata> data = db.gallerydatas.ToList();
             return View(data);
         }
 
@@ -62,7 +62,7 @@ namespace DMS.Controllers
         public ActionResult beautifultours()
         {
             ViewBag.Message = "Your tours page.";
-            List<destination> data = db.destinations.ToList();
+            List<destinationn> data = db.destinationns.ToList();
             return View(data);
         }
 
