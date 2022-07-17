@@ -7,13 +7,13 @@ namespace DMS.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class create_table_for_gallery : IMigrationMetadata
+    public sealed partial class create_table_for_gallerydata : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(create_table_for_gallery));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(create_table_for_gallerydata));
         
         string IMigrationMetadata.Id
         {
-            get { return "202207161009069_create_table_for_gallery"; }
+            get { return "202207170456597_create_table_for_gallerydata"; }
         }
         
         string IMigrationMetadata.Source
