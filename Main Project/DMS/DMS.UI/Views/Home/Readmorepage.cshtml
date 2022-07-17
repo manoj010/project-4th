@@ -1,0 +1,127 @@
+﻿@model List<DMS.DAL.DatabaseContext.destinationn>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "readmore";
+}
+
+<style>
+    .detail {
+        color: #2ec4b6;
+        font-size: 24px;
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+
+    .detail-1 {
+        color: #000;
+        font-size: 16px;
+    }
+
+    .description {
+        color: #2ec4b6;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .blog {
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+        height: 35vh;
+    }
+
+    .blog-content {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+    }
+</style>
+
+<!-- banner -->
+<div class="inner_banner_agile">
+
+</div>
+
+<div class="services-breadcrumb">
+    <div class="inner_breadcrumb">
+        <ul class="short_ls">
+            <li>
+                <a href="@Url.Action("Index","Home")">Home</a>
+                <span>/ /</span>
+            </li>
+            <li>Read More</li>
+        </ul>
+    </div>
+</div>
+
+<div class="welcome">
+    <div class="container">
+        <h3 class="title">Tour Title (change garnu xa)</h3>
+        <div class="blog">
+            <div class="detail">Details</div><br />
+            <div class="blog-content">
+                <div class="blog-text">
+                    <p class="detail-1">
+                        We are committed to offering travel services of the highest quality, combining our energy and enthusiasm, with our years
+                        of experience. Our greatest satisfaction comes in serving large numbers of satisfied clients who have experienced the
+                        joys and inspiration of travel.  @*tour details*@
+                    </p>
+
+                    <br />
+
+                    <p>
+                        <label class="description">Location: </label>
+                        @*tour location*@
+                    </p>
+
+                    <p>
+                        <label class="description">Duration: </label>
+                        @*tour duration*@
+                    </p>
+
+                    <p>
+                        <label class="description">Price: </label>
+                        @*tour price*@
+                    </p>
+
+                    <div class="readmore-w3-agileits about-read">
+                        <a href="@Url.Action("Booktour","Home")">Book Tour</a>
+                    </div>
+
+                </div>
+
+                <img src="~/Content/TravelAndTours/images/a1.jpg" style="height:280px; width:800px; padding-left: 25px;"> @*tour image*@
+
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+
+<div class="trips-section">
+    <div class="container">
+        <h3 class="title">Our Other Tours</h3>
+        @foreach (var data in Model)
+        {
+            <div class="col-xs-4 exce-grid1-mmstyle">
+                <img src="@Url.Content(data.photo + "/" + data.photo_name)">
+                <div class="grid-ec1">
+                    <h3>@(data.dname)</h3>
+                    <p>@(data.description)</p>
+                    <h4>
+                        <i class="fa fa-map-marker"></i>@(data.location)
+                    </h4>
+                    <h4 class="w3l-name">
+                        <i class="fa fa-calendar"></i>@(data.dtime)
+                    </h4>
+                    <div class="readmore-w3-agileits about-read">
+                        <a href="@Url.Action("Readmorepage","Home")">Read More</a>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="clearfix"></div>
+    </div>
+</div>

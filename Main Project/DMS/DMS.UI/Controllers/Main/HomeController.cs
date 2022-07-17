@@ -65,7 +65,21 @@ namespace DMS.Controllers
             List<destinationn> data = db.destinationns.ToList();
             return View(data);
         }
+        public ActionResult Readmorepage()
+        {
+            List<destinationn> data = db.destinationns.ToList();
+            return View(data);
+        }
+        public ActionResult Booktour()
+        {
+            return View();
+        }
 
+        public ActionResult Success()
+        {
+            List<destinationn> data = db.destinationns.ToList();
+            return View(data);
+        }
         public async Task<ActionResult> Dashboard()
         {
             return RedirectToAction("Index", "admin");

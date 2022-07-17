@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "readmore";
+}
+
+<!-- banner -->
+<div class="inner_banner_agile">
+
+</div>
+
+<div class="services-breadcrumb">
+    <div class="inner_breadcrumb">
+        <ul class="short_ls">
+            <li>
+                <a href="@Url.Action("Index","Home")">Home</a>
+                <span>/ /</span>
+            </li>
+            <li>Book Tour</li>
+        </ul>
+    </div>
+</div>
+
+<div class="contact">
+    <div class="container">
+        <h3 class="title">Book Tour</h3>
+        <h3 class="title">Booking for @*tour title*@</h3>
+        <div class="contact-block-left">
+            <form action="#" method="post">
+                <input type="text" placeholder="Full Name" required="" name="Fullname">
+                <input type="email" class="email" placeholder="Email" name="Email" required="">
+                <input type="text" placeholder="Phone Number" required="" name="Phonenumber">
+                <textarea placeholder="Additional Needs" name="message" required=""></textarea>
+                <input type="submit" value="Book">
+
+                @*submit vayesi success page ma redirect garau*@
+            </form>
+        </div>
+    </div>
+</div>

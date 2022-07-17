@@ -1498,6 +1498,9 @@
     <Content Include="Views\Gallery\AddNew.cshtml" />
     <Content Include="Views\Bookeddetails\index.cshtml" />
     <Content Include="Views\Contactdetails\index.cshtml" />
+    <Content Include="Views\Home\Booktour.cshtml" />
+    <Content Include="Views\Home\Readmorepage.cshtml" />
+    <Content Include="Views\Home\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

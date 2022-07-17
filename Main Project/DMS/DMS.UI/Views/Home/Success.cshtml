@@ -1,0 +1,66 @@
+﻿@model List<DMS.DAL.DatabaseContext.destinationn>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "readmore";
+}
+
+<style>
+    .success-msg{
+        color: #000;
+        font-size: 18px;
+        text-align: center;
+    }
+</style>
+
+<!-- banner -->
+<div class="inner_banner_agile">
+
+</div>
+
+<div class="services-breadcrumb">
+    <div class="inner_breadcrumb">
+        <ul class="short_ls">
+            <li>
+                <a href="@Url.Action("Index","Home")">Home</a>
+                <span>/ /</span>
+            </li>
+            <li>Success</li>
+        </ul>
+    </div>
+</div>
+
+<div class="welcome">
+    <div class="container">
+        <h3 class="title">Your Booking was Successful</h3>
+        <p class="success-msg">
+            You will receive message and call from our team soon. Thanks for choosing us.
+        </p>
+    <div class="clearfix"> </div>
+</div>
+
+<div class="trips-section">
+    <div class="container">
+        <h3 class="title">Our Other Tours</h3>
+        @foreach (var data in Model)
+        {
+            <div class="col-xs-4 exce-grid1-mmstyle">
+                <img src="@Url.Content(data.photo + "/" + data.photo_name)">
+                <div class="grid-ec1">
+                    <h3>@(data.dname)</h3>
+                    <p>@(data.description)</p>
+                    <h4>
+                        <i class="fa fa-map-marker"></i>@(data.location)
+                    </h4>
+                    <h4 class="w3l-name">
+                        <i class="fa fa-calendar"></i>@(data.dtime)
+                    </h4>
+                    <div class="readmore-w3-agileits about-read">
+                        <a href="@Url.Action("Readmorepage","Home")">Read More</a>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="clearfix"></div>
+    </div>
+</div>
