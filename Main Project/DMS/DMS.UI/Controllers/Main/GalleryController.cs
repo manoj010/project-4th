@@ -14,13 +14,13 @@ namespace DMS.Controllers.Main
         // GET: Gallery
         public ActionResult Index()
         {
-            List<gallery> data = db.galleries.ToList();
+            List<gallerydata> data = db.gallerydatas.ToList();
             return View(data);
         }
 
         public ActionResult AddNew()
         {
-            List<gallery> data = db.galleries.ToList();
+            List<gallerydata> data = db.gallerydatas.ToList();
             return View(data);
         }
 
@@ -34,10 +34,10 @@ namespace DMS.Controllers.Main
                 Directory.CreateDirectory(path);
             }
             photo.SaveAs(new_path);
-            gallery gallery = new gallery();
+            gallerydata gallery = new gallerydata();
             gallery.photo = "~/ Uploads";
             gallery.photo_name = filename;
-            db.galleries.Add(gallery);
+            db.gallerydatas.Add(gallery);
             db.SaveChanges();
 
 
@@ -46,7 +46,7 @@ namespace DMS.Controllers.Main
 
         public ActionResult Search(string name1)
         {
-            var data1 = db.galleries.Where(x => x.destination_name == name1).ToList();
+            var data1 = db.gallerydatas.Where(x => x.destination_name == name1).ToList();
             return View("gallery", data1);
         }
     }

@@ -49,7 +49,7 @@ namespace DMS.Controllers
         }
         public ActionResult gallery()
         {
-            List<gallery> data = db.galleries.ToList();
+            List<gallerydata> data = db.gallerydatas.ToList();
             ViewBag.Message = "Your gallery page.";
             return View(data);
         }
@@ -66,9 +66,9 @@ namespace DMS.Controllers
             return View(data);
         }
 
-        public async Task<ActionResult>Dashboard()
+        public async Task<ActionResult> Dashboard()
         {
-            return RedirectToAction("Index","admin");
+            return RedirectToAction("Index", "admin");
         }
 
     }
