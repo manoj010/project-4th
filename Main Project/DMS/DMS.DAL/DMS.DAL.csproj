@@ -232,13 +232,13 @@
     <Compile Include="Migrations\202207171104339_alter_for_gallerydata.Designer.cs">
       <DependentUpon>202207171104339_alter_for_gallerydata.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202207171412484_create_table_for_booktour.cs" />
-    <Compile Include="Migrations\202207171412484_create_table_for_booktour.Designer.cs">
-      <DependentUpon>202207171412484_create_table_for_booktour.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202207171553400_create_table_for_contactus.cs" />
     <Compile Include="Migrations\202207171553400_create_table_for_contactus.Designer.cs">
       <DependentUpon>202207171553400_create_table_for_contactus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207181151072_create_table_for_booktours.cs" />
+    <Compile Include="Migrations\202207181151072_create_table_for_booktours.Designer.cs">
+      <DependentUpon>202207181151072_create_table_for_booktours.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -341,11 +341,11 @@
     <EmbeddedResource Include="Migrations\202207171104339_alter_for_gallerydata.resx">
       <DependentUpon>202207171104339_alter_for_gallerydata.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202207171412484_create_table_for_booktour.resx">
-      <DependentUpon>202207171412484_create_table_for_booktour.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202207171553400_create_table_for_contactus.resx">
       <DependentUpon>202207171553400_create_table_for_contactus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207181151072_create_table_for_booktours.resx">
+      <DependentUpon>202207181151072_create_table_for_booktours.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

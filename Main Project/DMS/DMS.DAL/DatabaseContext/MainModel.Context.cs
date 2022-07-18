@@ -35,7 +35,7 @@ namespace DMS.DAL.DatabaseContext
         public virtual DbSet<usr05users> usr05users { get; set; }
         public virtual DbSet<destinationn> destinationns { get; set; }
         public virtual DbSet<gallerydata> gallerydatas { get; set; }
-        public virtual DbSet<booktour> booktours { get; set; }
         public virtual DbSet<contactu> contactus { get; set; }
+        public virtual DbSet<booktour> booktours { get; set; }
     }
 }

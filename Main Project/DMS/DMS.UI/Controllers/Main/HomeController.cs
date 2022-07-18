@@ -60,6 +60,12 @@ namespace DMS.Controllers
             return View("gallery", data1);
         }
 
+        public ActionResult Search1(string name2)
+        {
+            var data2 = db.destinationns.Where(x => x.dname == name2).ToList();
+            return View("beautifultours", data2);
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -78,6 +84,12 @@ namespace DMS.Controllers
             List<destinationn> data = db.destinationns.ToList();
             return View(data);
         }
+
+        public ActionResult destination(string dname)
+        {
+            Session["dname"] = dname;
+            return RedirectToAction("Booktour", "Home");
+        }
         
 
         public ActionResult Sort(int name2)
@@ -90,7 +102,7 @@ namespace DMS.Controllers
         {
             db.booktours.Add(book);
             db.SaveChanges();
-            return RedirectToAction("Success","Home");
+            return RedirectToAction("Success", "Home");
         }
 
         public ActionResult Readmorepage()

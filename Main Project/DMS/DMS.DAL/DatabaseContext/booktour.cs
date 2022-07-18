@@ -14,9 +14,10 @@ namespace DMS.DAL.DatabaseContext
     
     public partial class booktour
     {
+        public string dname { get; set; }
         public string fullname { get; set; }
         public string email { get; set; }
-        public int phonenumber { get; set; }
+        public string phonenumber { get; set; }
         public string message { get; set; }
     }
 }

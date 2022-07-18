@@ -13,7 +13,7 @@ namespace DMS.Controllers
         // GET: admin
         public ActionResult Index()
         {
-            Session["Totalbook"] = db.booktours.Count();
+            //Session["Totalbook"] = db.booktours.Count();
             Session["Total"] = db.destinationns.Count();
             Session["TotalPhoto"] = db.gallerydatas.Count();
             Session["TotalContact"] = db.contactus.Count();

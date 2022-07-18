@@ -90,6 +90,7 @@
                     <th>Email</th>
                     <th>Phone Number</th>
                     <th>Message</th>
+                    <th>Destination</th>
                     <th>Delete</th>
                 </tr>
                 @foreach (var data in Model)
@@ -100,7 +101,8 @@
                         <td>@(data.email)</td>
                         <td>@(data.phonenumber)</td>
                         <td>@(data.message)</td>
-                        <td><button><a href="@Url.Action("Delete1", new {name=data.phonenumber})"><i class="material-icons" style="color:red;">delete</i></a></button></td>
+                        <td>@(data.dname)</td>
+                        <td><button><a href="@Url.Action("delete1",new {number=data.phonenumber})"><i class="material-icons" style="color:red;">delete</i></a></button></td>
                     </tr>
                 }
             </table>

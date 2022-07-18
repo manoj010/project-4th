@@ -21,8 +21,8 @@
         <AssociationConnector Association="BIT4thSemModel.FK_usr05users_emp01employee" />
         <EntityTypeShape EntityType="BIT4thSemModel.destinationn" Width="1.5" PointX="8.375" PointY="7.75" />
         <EntityTypeShape EntityType="BIT4thSemModel.gallerydata" Width="1.5" PointX="7.375" PointY="0.75" />
-        <EntityTypeShape EntityType="BIT4thSemModel.booktour" Width="1.5" PointX="9.375" PointY="0.75" />
         <EntityTypeShape EntityType="BIT4thSemModel.contactu" Width="1.5" PointX="10.375" PointY="3.75" />
+        <EntityTypeShape EntityType="BIT4thSemModel.booktour" Width="1.5" PointX="9.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

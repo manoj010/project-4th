@@ -23,10 +23,12 @@
 <div class="contact">
     <div class="container">
         <h3 class="title">Book Tour</h3>
-        <h3 class="title">Booking for @*tour title*@</h3>
+        <h3 class="title">Booking for @Session["dname"]</h3>
         <div class="contact-block-left">
+            @*<p>@Session["dname"]</p>*@
             @using (Html.BeginForm("Savedata", "Home", FormMethod.Post))
             {
+                <input type="text" hidden value="@Session["dname"]" name="dname" />
                 <input type="text" placeholder="Full Name" required="" name="fullname">
                 <input type="email" class="email" placeholder="Email" name="email" required="">
                 <input type="text" placeholder="Phone Number" required="" name="phonenumber">

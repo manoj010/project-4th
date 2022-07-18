@@ -11,18 +11,18 @@ namespace DMS.Controllers.Main
     {
         MainEntities db = new MainEntities();
         // GET: BookedDetails
-        public ActionResult Index()
+        public ActionResult index()
         {
             List<booktour> all_data = db.booktours.ToList();
             return View(all_data);
         }
 
-        public ActionResult Delete1(int name)
+        public ActionResult delete1(string number)
         {
-            booktour data = db.booktours.Find(name);
+            booktour data = db.booktours.Find(number);
             db.booktours.Remove(data);
             db.SaveChanges();
-            return RedirectToAction("index","BookedDetails");
+            return RedirectToAction("index","Bookeddetails");
         }
     }
 }

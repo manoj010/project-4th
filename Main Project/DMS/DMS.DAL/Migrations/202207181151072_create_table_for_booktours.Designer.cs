@@ -7,13 +7,13 @@ namespace DMS.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class create_table_for_booktour : IMigrationMetadata
+    public sealed partial class create_table_for_booktours : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(create_table_for_booktour));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(create_table_for_booktours));
         
         string IMigrationMetadata.Id
         {
-            get { return "202207171412484_create_table_for_booktour"; }
+            get { return "202207181151072_create_table_for_booktours"; }
         }
         
         string IMigrationMetadata.Source
