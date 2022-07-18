@@ -17,6 +17,7 @@ namespace DMS.Controllers
             Session["Total"] = db.destinationns.Count();
             Session["TotalPhoto"] = db.gallerydatas.Count();
             Session["TotalContact"] = db.contactus.Count();
+            Session["TotalBook"] = db.booktours.Count();
             return View();
         }
     }

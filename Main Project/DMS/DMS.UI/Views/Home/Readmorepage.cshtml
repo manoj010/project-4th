@@ -36,14 +36,31 @@
         display: flex;
         justify-content: space-around;
     }
-    .but{
-        font-weight:bold;
-        background-color:deepskyblue;
-        color:black;
-        border:2px solid black;
-        margin-top:15px;
-        font-size:17px;
+
+    .btn-style {
+        margin-top: 15px;
+        border: 0px;
+        border-radius: 5px;
+        background: #ff9f1c;
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        font-size: 15px;
+        padding: 12px 20px;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
     }
+
+        .btn-style:hover {
+            color: #fff;
+            background: #000;
+            transition: 0.5s all;
+            -webkit-transition: 0.5s all;
+            -moz-transition: 0.5s all;
+            -o-transition: 0.5s all;
+        }
 </style>
 
 <!-- banner -->
@@ -97,10 +114,9 @@
                         @using (Html.BeginForm("destination", "Home", FormMethod.Post))
                         {
                             <input type="text" hidden value="@(data.dname)" name="dname"/>
-                            <button type="submit" class="but">Book Tour</button>
+                            <button type="submit" class="btn-style">Book Tour</button>
                         }
-                            @*<a href="@Url.Action("Booktour", "Home")">Book Tour</a>*@
-                        </div>
+                    </div>
                 </div>
 
                 <img src="@Url.Content(data.photo + "/" + data.photo_name)" style="height:280px; width:400px; margin-left: 300px;">
@@ -111,34 +127,4 @@
         <div class="clearfix"> </div>
     </div>
     <div class="clearfix"> </div>
-</div>
-
-<div class="trips-section">
-    <div class="container">
-        <h3 class="title">Our Other Tours</h3>
-        @foreach (var data in Model)
-        {
-            <div class="col-xs-4 exce-grid1-mmstyle">
-                <img src="@Url.Content(data.photo + "/" + data.photo_name)">
-                <div class="grid-ec1">
-                    <h3>@(data.dname)</h3>
-                    <p>@(data.description)</p>
-                    <h4>
-                        <i class="fa fa-map-marker"></i>@(data.location)
-                    </h4>
-                    <h4 class="w3l-name">
-                        <i class="fa fa-calendar"></i>@(data.dtime)
-                    </h4>
-                    <div class="readmore-w3-agileits about-read">
-                        @using (Html.BeginForm("Sort", "Home", FormMethod.Post))
-                        {
-                            <input type="text" hidden value="@(data.id)" name="name2" />
-                            <button type="submit">Read More</button>
-                        }
-                    </div>
-                </div>
-            </div>
-        }
-        <div class="clearfix"></div>
-    </div>
 </div>

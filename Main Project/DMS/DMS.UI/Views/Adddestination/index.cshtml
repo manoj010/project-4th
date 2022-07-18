@@ -1,5 +1,10 @@
 ﻿@model List<DMS.DAL.DatabaseContext.destinationn>
-    
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 @{
     ViewBag.Title = "index";
@@ -8,28 +13,28 @@
 }
 
 <style>
-    .table-style{
+    .table-style {
         border-collapse: collapse;
         margin: 25px 0;
         font-size: 0.9em;
-        min-width: 400px; 
+        min-width: 400px;
         border-radius: 5px;
         overflow: hidden;
     }
 
-    .table-style th{
-        background-color: #009879;
-        color: #ffffff;
-        text-align: center;
-        font-weight: bold;
-        padding: 12px 15px;
-    }
+        .table-style th {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: center;
+            font-weight: bold;
+            padding: 12px 15px;
+        }
 
-    .table-style td {
-        padding: 12px 15px;
-        text-align: center;
-        border-bottom: 2px solid #ffffff;
-    }
+        .table-style td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 2px solid #ffffff;
+        }
 
         .table-style tr:nth-of-type(even) {
             background-color: #c2c0c0;
@@ -43,11 +48,11 @@
             border-bottom: 3px solid #009879;
         }
 
-        .title{
-            font-size: 28px;
-            font-weight: bold;
-            text-align: center;
-        }
+    .title {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+    }
 
     .btn-style a {
         border-radius: 5px;
@@ -57,20 +62,20 @@
         color: #fff;
         font-size: 15px;
         padding: 12px 20px;
-        transition: 0.5s all; 
-        -webkit-transition: 0.5s all;
-        -moz-transition: 0.5s all;
-        -o-transition: 0.5s all;
-    }
-
-    .btn-style a:hover {
-        color: #fff;
-        background: #000;
         transition: 0.5s all;
         -webkit-transition: 0.5s all;
         -moz-transition: 0.5s all;
         -o-transition: 0.5s all;
     }
+
+        .btn-style a:hover {
+            color: #fff;
+            background: #000;
+            transition: 0.5s all;
+            -webkit-transition: 0.5s all;
+            -moz-transition: 0.5s all;
+            -o-transition: 0.5s all;
+        }
 </style>
 
 <section id="main-content">
@@ -105,7 +110,7 @@
                             <img src="@Url.Content(data.photo+"/"+data.photo_name)" height="200" width="200" />
                         </td>
                         <td><a href="@Url.Action("edit",new {id = data.id})">Edit</a></td>
-                        <td><a href="@Url.Action("deletedata",new {id = data.id})">Delete</a></td>
+                        <td><a href="@Url.Action("deletedata",new {id = data.id})"><i class="material-icons" style="color:red;">delete</i></a></td>
                     </tr>
                 }
             </table>
