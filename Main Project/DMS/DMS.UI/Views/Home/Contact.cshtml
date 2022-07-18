@@ -22,7 +22,7 @@
     <div class="container">
         <h3 class="title">Contact Us</h3>
         <div class="contact-block-left">
-            @using (Html.BeginForm("SaveData", "Home", FormMethod.Post))
+            @using (Html.BeginForm("Save", "Home", FormMethod.Post))
             {
                 <input type="text" placeholder="Name" required="" name="name">
                 <input type="email" class="email" placeholder="Email" name="email" required="">

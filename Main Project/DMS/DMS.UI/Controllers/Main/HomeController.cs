@@ -66,7 +66,7 @@ namespace DMS.Controllers
             return View();
         }
 
-        public ActionResult SaveData(contactu contact)
+        public ActionResult Save(contactu contact)
         {
             db.contactus.Add(contact);
             db.SaveChanges();
