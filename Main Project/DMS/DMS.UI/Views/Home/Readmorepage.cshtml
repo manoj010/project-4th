@@ -25,9 +25,8 @@
     }
 
     .blog {
-        display: block;
+        display: inline-block;
         justify-content: space-between;
-        align-items: center;
         height: 35vh;
     }
 
@@ -65,9 +64,7 @@
             <div class="blog-content">
                 <div class="blog-text">
                     <p class="detail-1">
-                        We are committed to offering travel services of the highest quality, combining our energy and enthusiasm, with our years
-                        of experience. Our greatest satisfaction comes in serving large numbers of satisfied clients who have experienced the
-                        joys and inspiration of travel.  @*tour details*@
+                        @(data.description)
                     </p>
 
                     <br />
@@ -90,10 +87,9 @@
                     <div class="readmore-w3-agileits about-read">
                         <a href="@Url.Action("Booktour", "Home")">Book Tour</a>
                     </div>
-
                 </div>
 
-                <img src="@Url.Content(data.photo + "/" + data.photo_name)" style="height:280px; width:800px; padding-left: 25px;"> @*tour image*@
+                <img src="@Url.Content(data.photo + "/" + data.photo_name)" style="height:280px; width:400px; margin-left: 50px;">
 
             </div>
         </div>

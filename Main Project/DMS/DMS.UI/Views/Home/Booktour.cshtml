@@ -27,15 +27,11 @@
         <div class="contact-block-left">
             @using (Html.BeginForm("Savedata", "Home", FormMethod.Post))
             {
-
-
-             <input type="text" placeholder="Full Name" required="" name="fullname">
-            <input type="email" class="email" placeholder="Email" name="email" required="">
-            <input type="text" placeholder="Phone Number" required="" name="phonenumber">
-            <textarea placeholder="Additional Needs" name="message" required=""></textarea>
-            <input type="submit" value="Book">
-
-            
+                <input type="text" placeholder="Full Name" required="" name="fullname">
+                <input type="email" class="email" placeholder="Email" name="email" required="">
+                <input type="text" placeholder="Phone Number" required="" name="phonenumber">
+                <textarea placeholder="Additional Needs" name="message" required=""></textarea>
+                <input type="submit" value="Book">
             }
         </div>
     </div>

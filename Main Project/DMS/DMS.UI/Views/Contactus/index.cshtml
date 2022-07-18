@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "index";
     Layout = "~/Views/Shared/adminlayout.cshtml";
+    int id = 0;
 }
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,6 +18,7 @@
         min-width: 400px;
         border-radius: 5px;
         overflow: hidden;
+        width: 100%;
     }
 
         .table-style th {
@@ -51,28 +53,6 @@
         text-align: center;
     }
 
-    .btn-style a {
-        border-radius: 5px;
-        background: #009879;
-        display: inline-block;
-        text-decoration: none;
-        color: #fff;
-        font-size: 15px;
-        padding: 12px 20px;
-        transition: 0.5s all;
-        -webkit-transition: 0.5s all;
-        -moz-transition: 0.5s all;
-        -o-transition: 0.5s all;
-    }
-
-        .btn-style a:hover {
-            color: #fff;
-            background: #000;
-            transition: 0.5s all;
-            -webkit-transition: 0.5s all;
-            -moz-transition: 0.5s all;
-            -o-transition: 0.5s all;
-        }
 </style>
 
 <section id="main-content">
@@ -81,6 +61,7 @@
             <div class="title">Contact Us Details</div>
             <table class="table-style">
                 <tr>
+                    <th>SN</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Feedback</th>
@@ -89,7 +70,8 @@
                 @foreach (var data in Model)
                 {
                     <tr>
-                        <td>@(data.)</td>
+                        <td>@(++id)</td>
+                        <td>@(data.name)</td>
                         <td>@(data.email)</td>
                         <td>@(data.feedback)</td>
                         <td><button><a href="@Url.Action("Delete", new {name=data.feedback})"><i class="material-icons" style="color:red;">delete</i></a></button></td>

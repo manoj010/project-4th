@@ -26,7 +26,7 @@
         <h3 class="title">Beautiful Tours</h3>
         @foreach (var data in Model)
         {
-            <div class="col-xs-4 exce-grid1-mmstyle">
+            <div class="col-xs-4 exce-grid1-mmstyle" style="padding-bottom: 3em;">
                 <img src="@Url.Content(data.photo + "/" + data.photo_name)">
                 <div class="grid-ec1">
                     <h3>@(data.dname)</h3>
@@ -41,7 +41,7 @@
                         @using (Html.BeginForm("Sort", "Home", FormMethod.Post))
                         {
                             <input type="text" hidden value="@(data.id)" name="name2" />
-                            <button type="submit" class="links" style="color: #696969; font-family:'Poppins', sans-serif;">Read More</button>
+                            <button type="submit" class="links">Read More</button>
                         }
                     </div>
                 </div>

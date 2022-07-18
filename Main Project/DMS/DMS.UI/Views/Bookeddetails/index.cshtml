@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "index";
     Layout = "~/Views/Shared/adminlayout.cshtml";
+    int id = 0;
 }
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,6 +14,7 @@
 
 <style>
     .table-style {
+        width: 100%;
         border-collapse: collapse;
         margin: 25px 0;
         font-size: 0.9em;
@@ -83,6 +85,7 @@
             <div class="title">Booked Details</div>
             <table class="table-style">
                 <tr>
+                    <th>SN</th>
                     <th>FullName</th>
                     <th>Email</th>
                     <th>Phone Number</th>
@@ -92,6 +95,7 @@
                 @foreach (var data in Model)
                 {
                     <tr>
+                        <td>@(++id)</td>
                         <td>@(data.fullname)</td>
                         <td>@(data.email)</td>
                         <td>@(data.phonenumber)</td>
