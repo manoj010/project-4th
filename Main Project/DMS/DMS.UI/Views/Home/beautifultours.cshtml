@@ -4,6 +4,69 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "beautifultours";
 }
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    /*Style for search Button*/
+    .searchBox {
+        margin-left: 875px;
+        margin-bottom: 30px;
+    }
+
+    .searchbar {
+        width: 100%;
+        max-width: 250px;
+        display: inline-flex;
+    }
+
+    .searchbar--max-width {
+        max-width: 100%;
+    }
+
+    .searchbar__input {
+        flex-grow: 1;
+        padding: 10px;
+        outline: none;
+        border: 1px solid #696969;
+        border-radius: 5px 0 0 5px;
+        background: #F4FAF9;
+        transition: background 0.25s, box-shadow 0.25s;
+    }
+
+        .searchbar__input:focus {
+            background: white;
+            box-shadow: 0 0 2px #696969;
+        }
+
+        .searchbar__input::placeholder {
+            color: #696969;
+        }
+
+    .searchbar__button {
+        width: 40px;
+        background: #696969;
+        color: #ffffff;
+        outline: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        user-select: none;
+    }
+
+        .searchbar__button:active {
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.25);
+        }
+    /*style for search button ends*/
+</style>
+
 <!-- banner -->
 <div class="inner_banner_agile">
 
@@ -24,6 +87,17 @@
 <div class="trips-section">
     <div class="container">
         <h3 class="title">Beautiful Tours</h3>
+        <div class="searchBox">
+            @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+            {
+                <div class="searchbar">
+                    <input type="text" class="searchbar__input" name="name1" placeholder="Search Destination">
+                    <button type="submit" class="searchbar__button">
+                        <i class="material-icons">search</i>
+                    </button>
+                </div>
+            }
+        </div>
         @foreach (var data in Model)
         {
             <div class="col-xs-4 exce-grid1-mmstyle" style="padding-bottom: 3em;">
