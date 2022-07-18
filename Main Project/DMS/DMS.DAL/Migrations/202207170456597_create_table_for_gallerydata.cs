@@ -14,6 +14,7 @@ namespace DMS.DAL.Migrations
                 photo_name nvarchar(255) NOT NULL,
                 destination_name nvarchar(255) NOT NULL
                 )");
+
         }
         
         public override void Down()

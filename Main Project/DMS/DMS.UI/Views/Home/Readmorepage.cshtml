@@ -57,7 +57,9 @@
 
 <div class="welcome">
     <div class="container">
-        <h3 class="title">Tour Title (change garnu xa)</h3>
+        <h3 class="title">ABOUT TOUR AND BOOKING</h3>
+        @foreach (var data in Model.Take(1))
+        {
         <div class="blog">
             <div class="detail">Details</div><br />
             <div class="blog-content">
@@ -72,29 +74,30 @@
 
                     <p>
                         <label class="description">Location: </label>
-                        @*tour location*@
+                        @(data.location)
                     </p>
 
                     <p>
                         <label class="description">Duration: </label>
-                        @*tour duration*@
+                        @(data.dtime)
                     </p>
 
                     <p>
                         <label class="description">Price: </label>
-                        @*tour price*@
+                        @(data.price)
                     </p>
 
                     <div class="readmore-w3-agileits about-read">
-                        <a href="@Url.Action("Booktour","Home")">Book Tour</a>
+                        <a href="@Url.Action("Booktour", "Home")">Book Tour</a>
                     </div>
 
                 </div>
 
-                <img src="~/Content/TravelAndTours/images/a1.jpg" style="height:280px; width:800px; padding-left: 25px;"> @*tour image*@
+                <img src="@Url.Content(data.photo + "/" + data.photo_name)" style="height:280px; width:800px; padding-left: 25px;"> @*tour image*@
 
             </div>
         </div>
+        }
         <div class="clearfix"> </div>
     </div>
     <div class="clearfix"> </div>
@@ -117,7 +120,11 @@
                         <i class="fa fa-calendar"></i>@(data.dtime)
                     </h4>
                     <div class="readmore-w3-agileits about-read">
-                        <a href="@Url.Action("Readmorepage","Home")">Read More</a>
+                        @using (Html.BeginForm("Sort", "Home", FormMethod.Post))
+                        {
+                            <input type="text" hidden value="@(data.id)" name="name2" />
+                            <button type="submit">Read More</button>
+                        }
                     </div>
                 </div>
             </div>

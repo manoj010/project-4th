@@ -38,7 +38,11 @@
                         <i class="fa fa-calendar"></i>@(data.dtime)
                     </h4>
                     <div class="readmore-w3-agileits about-read">
-                        <a href="#">Read More</a>
+                        @using (Html.BeginForm("Sort", "Home", FormMethod.Post))
+                        {
+                            <input type="text" hidden value="@(data.id)" name="name2" />
+                            <button type="submit" class="links" style="color: #696969; font-family:'Poppins', sans-serif;">Read More</button>
+                        }
                     </div>
                 </div>
             </div>

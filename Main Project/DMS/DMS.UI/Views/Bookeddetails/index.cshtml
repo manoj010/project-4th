@@ -1,31 +1,39 @@
-﻿@{
+﻿@model List<DMS.DAL.DatabaseContext.booktour>
+
+@{
     ViewBag.Title = "index";
     Layout = "~/Views/Shared/adminlayout.cshtml";
 }
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
-    .table-style{
+    .table-style {
         border-collapse: collapse;
         margin: 25px 0;
         font-size: 0.9em;
-        min-width: 400px; 
+        min-width: 400px;
         border-radius: 5px;
         overflow: hidden;
     }
 
-    .table-style th{
-        background-color: #009879;
-        color: #ffffff;
-        text-align: center;
-        font-weight: bold;
-        padding: 12px 15px;
-    }
+        .table-style th {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: center;
+            font-weight: bold;
+            padding: 12px 15px;
+        }
 
-    .table-style td {
-        padding: 12px 15px;
-        text-align: center;
-        border-bottom: 2px solid #ffffff;
-    }
+        .table-style td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 2px solid #ffffff;
+        }
 
         .table-style tr:nth-of-type(even) {
             background-color: #c2c0c0;
@@ -39,11 +47,11 @@
             border-bottom: 3px solid #009879;
         }
 
-        .title{
-            font-size: 28px;
-            font-weight: bold;
-            text-align: center;
-        }
+    .title {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+    }
 
     .btn-style a {
         border-radius: 5px;
@@ -53,20 +61,20 @@
         color: #fff;
         font-size: 15px;
         padding: 12px 20px;
-        transition: 0.5s all; 
-        -webkit-transition: 0.5s all;
-        -moz-transition: 0.5s all;
-        -o-transition: 0.5s all;
-    }
-
-    .btn-style a:hover {
-        color: #fff;
-        background: #000;
         transition: 0.5s all;
         -webkit-transition: 0.5s all;
         -moz-transition: 0.5s all;
         -o-transition: 0.5s all;
     }
+
+        .btn-style a:hover {
+            color: #fff;
+            background: #000;
+            transition: 0.5s all;
+            -webkit-transition: 0.5s all;
+            -moz-transition: 0.5s all;
+            -o-transition: 0.5s all;
+        }
 </style>
 
 <section id="main-content">
@@ -75,14 +83,20 @@
             <div class="title">Booked Details</div>
             <table class="table-style">
                 <tr>
-                    <th></th>
-                    <th></th>
+                    <th>FullName</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Message</th>
+                    <th>Delete</th>
                 </tr>
                 @foreach (var data in Model)
                 {
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td>@(data.fullname)</td>
+                        <td>@(data.email)</td>
+                        <td>@(data.phonenumber)</td>
+                        <td>@(data.message)</td>
+                        <td><button><a href="@Url.Action("Delete1", new {name=data.phonenumber})"><i class="material-icons" style="color:red;">delete</i></a></button></td>
                     </tr>
                 }
             </table>
@@ -90,3 +104,4 @@
         </div>
     </section>
 </section>
+

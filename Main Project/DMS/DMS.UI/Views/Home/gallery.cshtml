@@ -82,15 +82,15 @@
 <!-- //banner -->
 <!-- gallery -->
 <div class="searchBox">
-    @*@using (Html.BeginForm("Search", "forSeries", FormMethod.Post))*@
-
+    @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+    { 
     <div class="searchbar">
-        <input type="text" class="searchbar__input" name="name1" placeholder="Search Series">
+        <input type="text" class="searchbar__input" name="name1" placeholder="Search Destination">
         <button type="submit" class="searchbar__button">
             <i class="material-icons">search</i>
         </button>
     </div>
-    @*}*@
+    }
 </div>
 <div class="gallery">
     <div class="container">
@@ -99,9 +99,9 @@
             @foreach (var data in Model)
             {
                 <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
-                    <a href="@Url.Content(data.photo + "/" + data.photo_name)" class="lsb-preview" data-lsb-group="header">
+                    <a href="@Url.Content(data.photo)" class="lsb-preview" data-lsb-group="header">
                         <div class="w3layouts_news_grid">
-                            <img src="@Url.Content(data.photo + "/" + data.photo_name)" alt=" " class="img-responsive">
+                            <img src="@Url.Content(data.photo)" alt=" " class="img-responsive">
                             <div class="w3layouts_news_grid_pos">
                                 <div class="wthree_text">
                                     <h3>@(data.destination_name)</h3>
@@ -111,102 +111,7 @@
                     </a>
                 </div>
             }
-            @*<div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
-                <a href="~/Content/TravelAndTours/images/g2.jpg" class="lsb-preview" data-lsb-group="header">
-                    <div class="w3layouts_news_grid">
-                        <img src="~/Content/TravelAndTours/images/g2.jpg" alt=" " class="img-responsive">
-                        <div class="w3layouts_news_grid_pos">
-                            <div class="wthree_text">
-                                <h3>Travel Tours</h3>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
-                <a href="~/Content/TravelAndTours/images/g3.jpg" class="lsb-preview" data-lsb-group="header">
-                    <div class="w3layouts_news_grid">
-                        <img src="~/Content/TravelAndTours/images/g3.jpg" alt=" " class="img-responsive">
-                        <div class="w3layouts_news_grid_pos">
-                            <div class="wthree_text">
-                                <h3>Travel Tours</h3>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
-                <a href="~/Content/TravelAndTours/images/g4.jpg" class="lsb-preview" data-lsb-group="header">
-                    <div class="w3layouts_news_grid">
-                        <img src="~/Content/TravelAndTours/images/g4.jpg" alt=" " class="img-responsive">
-                        <div class="w3layouts_news_grid_pos">
-                            <div class="wthree_text">
-                                <h3>Travel Tours</h3>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
-                <a href="~/Content/TravelAndTours/images/g5.jpg" class="lsb-preview" data-lsb-group="header">
-                    <div class="w3layouts_news_grid">
-                        <img src="~/Content/TravelAndTours/images/g5.jpg" alt=" " class="img-responsive">
-                        <div class="w3layouts_news_grid_pos">
-                            <div class="wthree_text">
-                                <h3>Travel Tours</h3>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
-                <a href="~/Content/TravelAndTours/images/g6.jpg" class="lsb-preview" data-lsb-group="header">
-                    <div class="w3layouts_news_grid">
-                        <img src="~/Content/TravelAndTours/images/g6.jpg" alt=" " class="img-responsive">
-                        <div class="w3layouts_news_grid_pos">
-                            <div class="wthree_text">
-                                <h3>Travel Tours</h3>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
-                <a href="~/Content/TravelAndTours/images/g7.jpg" class="lsb-preview" data-lsb-group="header">
-                    <div class="w3layouts_news_grid">
-                        <img src="~/Content/TravelAndTours/images/g7.jpg" alt=" " class="img-responsive">
-                        <div class="w3layouts_news_grid_pos">
-                            <div class="wthree_text">
-                                <h3>Travel Tours</h3>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
-                <a href="~/Content/TravelAndTours/images/g8.jpg" class="lsb-preview" data-lsb-group="header">
-                    <div class="w3layouts_news_grid">
-                        <img src="~/Content/TravelAndTours/images/g8.jpg" alt=" " class="img-responsive">
-                        <div class="w3layouts_news_grid_pos">
-                            <div class="wthree_text">
-                                <h3>Travel Tours</h3>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 col-xs-4 w3layouts_gallery_grid">
-                <a href="~/Content/TravelAndTours/images/g9.jpg" class="lsb-preview" data-lsb-group="header">
-                    <div class="w3layouts_news_grid">
-                        <img src="~/Content/TravelAndTours/images/g9.jpg" alt=" " class="img-responsive">
-                        <div class="w3layouts_news_grid_pos">
-                            <div class="wthree_text">
-                                <h3>Travel Tours</h3>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>*@
+            
             <div class="clearfix"> </div>
         </div>
     </div>

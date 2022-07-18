@@ -48,9 +48,14 @@ namespace DMS.Controllers.Main
             db.SaveChanges();
             return RedirectToAction("index");
         }
-        public ActionResult edit(int id, HttpPostedFileBase photo)
+        public ActionResult edit(int id)
         {
             destinationn destination = db.destinationns.Find(id);
+            //employee data=db.employees.firstordefault(x=>x.id==id);
+            return View(destination);
+        }
+        public ActionResult Updatedata(destinationn destination, HttpPostedFileBase photo)
+        {
             string path = Server.MapPath("~/Uploads");
             string filename = photo.FileName;
             string new_path = path + "/" + filename;
@@ -62,14 +67,6 @@ namespace DMS.Controllers.Main
             destination.photo = "~/Uploads";
             destination.photo_name = filename;
             db.destinationns.Add(destination);
-            db.SaveChanges();
-            //return RedirectToAction("index");
-            //employee data=db.employees.firstordefault(x=>x.id==id);
-            return View(destination);
-        }
-        public ActionResult Updatedata(destinationn destination)
-        {
-
             db.Entry(destination).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("index");

@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="BIT4thSemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="booktour">
+          <Key>
+            <PropertyRef Name="phonenumber" />
+          </Key>
+          <Property Name="fullname" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="phonenumber" Type="int" Nullable="false" />
+          <Property Name="message" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
         <EntityType Name="bra01branches">
           <Key>
             <PropertyRef Name="bra01uin" />
@@ -37,6 +46,14 @@
           <Property Name="cfg01created_name" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="cfg01updated_name" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="cfg01updated_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="contactus">
+          <Key>
+            <PropertyRef Name="feedback" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="feedback" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="dep01department">
           <Key>
@@ -115,7 +132,6 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="photo" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="photo_name" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="destination_name" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="lvl01employee_levels">
@@ -237,8 +253,10 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="BIT4thSemModelStoreContainer">
+          <EntitySet Name="booktour" EntityType="Self.booktour" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="bra01branches" EntityType="Self.bra01branches" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cfg01configurations" EntityType="Self.cfg01configurations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contactus" EntityType="Self.contactus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dep01department" EntityType="Self.dep01department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="des01designations" EntityType="Self.des01designations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="destinationn" EntityType="Self.destinationn" Schema="dbo" store:Type="Tables" />
@@ -309,8 +327,10 @@
             <End Role="emp01employee" EntitySet="emp01employee" />
             <End Role="usr05users" EntitySet="usr05users" />
           </AssociationSet>
-          <EntitySet Name="gallerydatas" EntityType="BIT4thSemModel.gallerydata" />
           <EntitySet Name="destinationns" EntityType="BIT4thSemModel.destinationn" />
+          <EntitySet Name="gallerydatas" EntityType="BIT4thSemModel.gallerydata" />
+          <EntitySet Name="booktours" EntityType="BIT4thSemModel.booktour" />
+          <EntitySet Name="contactus" EntityType="BIT4thSemModel.contactu" />
         </EntityContainer>
         <EntityType Name="bra01branches">
           <Key>
@@ -533,15 +553,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="gallerydata">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="photo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="photo_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="destination_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="destinationn">
           <Key>
             <PropertyRef Name="id" />
@@ -554,6 +565,31 @@
           <Property Name="description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="photo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="photo_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gallerydata">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="photo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="destination_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="booktour">
+          <Key>
+            <PropertyRef Name="phonenumber" />
+          </Key>
+          <Property Name="fullname" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="phonenumber" Type="Int32" Nullable="false" />
+          <Property Name="message" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="contactu">
+          <Key>
+            <PropertyRef Name="feedback" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="feedback" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -705,16 +741,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="gallerydatas">
-            <EntityTypeMapping TypeName="BIT4thSemModel.gallerydata">
-              <MappingFragment StoreEntitySet="gallerydata">
-                <ScalarProperty Name="destination_name" ColumnName="destination_name" />
-                <ScalarProperty Name="photo_name" ColumnName="photo_name" />
-                <ScalarProperty Name="photo" ColumnName="photo" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="destinationns">
             <EntityTypeMapping TypeName="BIT4thSemModel.destinationn">
               <MappingFragment StoreEntitySet="destinationn">
@@ -726,6 +752,34 @@
                 <ScalarProperty Name="dtime" ColumnName="dtime" />
                 <ScalarProperty Name="dname" ColumnName="dname" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gallerydatas">
+            <EntityTypeMapping TypeName="BIT4thSemModel.gallerydata">
+              <MappingFragment StoreEntitySet="gallerydata">
+                <ScalarProperty Name="destination_name" ColumnName="destination_name" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="booktours">
+            <EntityTypeMapping TypeName="BIT4thSemModel.booktour">
+              <MappingFragment StoreEntitySet="booktour">
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contactus">
+            <EntityTypeMapping TypeName="BIT4thSemModel.contactu">
+              <MappingFragment StoreEntitySet="contactus">
+                <ScalarProperty Name="feedback" ColumnName="feedback" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

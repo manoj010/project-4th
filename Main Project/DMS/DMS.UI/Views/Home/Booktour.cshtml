@@ -25,15 +25,18 @@
         <h3 class="title">Book Tour</h3>
         <h3 class="title">Booking for @*tour title*@</h3>
         <div class="contact-block-left">
-            <form action="#" method="post">
-                <input type="text" placeholder="Full Name" required="" name="Fullname">
-                <input type="email" class="email" placeholder="Email" name="Email" required="">
-                <input type="text" placeholder="Phone Number" required="" name="Phonenumber">
-                <textarea placeholder="Additional Needs" name="message" required=""></textarea>
-                <input type="submit" value="Book">
+            @using (Html.BeginForm("Savedata", "Home", FormMethod.Post))
+            {
 
-                @*submit vayesi success page ma redirect garau*@
-            </form>
+
+             <input type="text" placeholder="Full Name" required="" name="fullname">
+            <input type="email" class="email" placeholder="Email" name="email" required="">
+            <input type="text" placeholder="Phone Number" required="" name="phonenumber">
+            <textarea placeholder="Additional Needs" name="message" required=""></textarea>
+            <input type="submit" value="Book">
+
+            
+            }
         </div>
     </div>
 </div>

@@ -308,7 +308,9 @@
     <Compile Include="Controllers\Base\BaseControllerV1Controller.cs" />
     <Compile Include="Controllers\Base\_BaseAuthenticatedController.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
+    <Compile Include="Controllers\Main\BookedDetailsController.cs" />
     <Compile Include="Controllers\Main\ConfigurationController.cs" />
+    <Compile Include="Controllers\Main\ContactusController.cs" />
     <Compile Include="Controllers\Main\GalleryController.cs" />
     <Compile Include="Controllers\Main\JavaScriptController.cs" />
     <Compile Include="Controllers\Main\RolePermissionController.cs" />
@@ -1496,17 +1498,17 @@
     <Content Include="Views\Home\beautifultours.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Gallery\AddNew.cshtml" />
-    <Content Include="Views\Bookeddetails\index.cshtml" />
-    <Content Include="Views\Contactdetails\index.cshtml" />
     <Content Include="Views\Home\Booktour.cshtml" />
     <Content Include="Views\Home\Readmorepage.cshtml" />
     <Content Include="Views\Home\Success.cshtml" />
+    <Content Include="Views\BookedDetails\index.cshtml" />
+    <Content Include="Views\Contactus\index.cshtml" />
+    <Content Include="Views\Home\contactsuccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Automappers\Profiles\" />
     <Folder Include="Content\assets\plugins\bootstrap-datepicker\css\" />
-    <Folder Include="Galleryphoto\" />
     <Folder Include="private\ExcelFormat\" />
     <Folder Include="private\Import\" />
     <Folder Include="Uploads\" />

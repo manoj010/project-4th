@@ -12,10 +12,10 @@ namespace DMS.DAL.DatabaseContext
     using System;
     using System.Collections.Generic;
     
-    public partial class gallerydata
+    public partial class contactu
     {
-        public int id { get; set; }
-        public string photo { get; set; }
-        public string destination_name { get; set; }
+        public string name { get; set; }
+        public string email { get; set; }
+        public string feedback { get; set; }
     }
 }

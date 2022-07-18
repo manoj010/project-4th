@@ -1,7 +1,13 @@
-﻿@{
+﻿@model List<DMS.DAL.DatabaseContext.contactu>
+@{
     ViewBag.Title = "index";
     Layout = "~/Views/Shared/adminlayout.cshtml";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
     .table-style {
@@ -75,14 +81,18 @@
             <div class="title">Contact Us Details</div>
             <table class="table-style">
                 <tr>
-                    <th></th>
-                    <th></th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Feedback</th>
+                    <th>Delete</th>
                 </tr>
                 @foreach (var data in Model)
                 {
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td>@(data.)</td>
+                        <td>@(data.email)</td>
+                        <td>@(data.feedback)</td>
+                        <td><button><a href="@Url.Action("Delete", new {name=data.feedback})"><i class="material-icons" style="color:red;">delete</i></a></button></td>
                     </tr>
                 }
             </table>
@@ -90,3 +100,4 @@
         </div>
     </section>
 </section>
+

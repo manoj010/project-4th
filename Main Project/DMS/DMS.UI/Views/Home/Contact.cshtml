@@ -22,13 +22,14 @@
     <div class="container">
         <h3 class="title">Contact Us</h3>
         <div class="contact-block-left">
-            <form action="#" method="post">
-                <input type="text" placeholder="Name" required="" name="Name">
-                <input type="email" class="email" placeholder="Email" name="Email" required="">
-                <textarea placeholder="Message" name="message" required=""></textarea>
+            @using (Html.BeginForm("SaveData", "Home", FormMethod.Post))
+            {
+                <input type="text" placeholder="Name" required="" name="name">
+                <input type="email" class="email" placeholder="Email" name="email" required="">
+                <textarea placeholder="Feedback" name="feedback" required=""></textarea>
                 <input type="submit" value="Submit">
-            </form>
-        </div>
+            }
+            </div>
         <div class="contact-seco">
             <div class="col-md-5 col-xs-5 contact-left-w3ls">
                 <h3>Get In Touch</h3>

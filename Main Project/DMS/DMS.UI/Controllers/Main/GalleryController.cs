@@ -23,10 +23,10 @@ namespace DMS.Controllers.Main
             List<gallerydata> data = db.gallerydatas.ToList();
             return View(data);
         }
-
-        public ActionResult Savedata(gallerydata gallerydata, HttpPostedFileBase photo)
+       
+        public ActionResult SaveData(gallerydata gallerydata, HttpPostedFileBase photo)
         {
-            string path = Server.MapPath("~/Galleryphoto");
+            string path = Server.MapPath("~/Uploads");
             string filename = photo.FileName;
             string new_path = path + "/" + filename;
             if (!Directory.Exists(path))
@@ -34,8 +34,8 @@ namespace DMS.Controllers.Main
                 Directory.CreateDirectory(path);
             }
             photo.SaveAs(new_path);
-            gallerydata.photo = "~/Galleryphoto";
-            gallerydata.photo_name = filename;
+            gallerydata.photo = "~/Uploads/"+filename;
+            //gallerydata.photo_name = filename;
             db.gallerydatas.Add(gallerydata);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -49,10 +49,6 @@ namespace DMS.Controllers.Main
             return RedirectToAction("Index");
         }
 
-        public ActionResult Search(string name1)
-        {
-            var data1 = db.gallerydatas.Where(x => x.destination_name == name1).ToList();
-            return View("gallery", data1);
-        }
+       
     }
 }

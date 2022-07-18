@@ -1,8 +1,14 @@
-﻿@{
+﻿@model List<DMS.DAL.DatabaseContext.gallerydata>
+@{
     Layout = "~/Views/Shared/adminlayout.cshtml";
     ViewBag.Title = "Index";
     int sn = 0;
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
     .table-style {
@@ -87,14 +93,14 @@
                 </tr>
                 @foreach (var data in Model)
                 {
-            <tr>
-                <td>@(++sn)</td>
-                <td>
-                    <img src="@Url.Content(data.photo+"/"+data.photo_name)" height="200" width="200" />
-                </td>
-                <td>@(data.destination_name)</td>
-                <td><a href="@Url.Action("deletedata",new {id = data.id})">Delete</a></td>
-            </tr>
+                    <tr>
+                        <td>@(++sn)</td>
+                        <td>
+                            <img src="@Url.Content(data.photo)" height="200" width="200" />
+                        </td>
+                        <td>@(data.destination_name)</td>
+                        <td><button><a href="@Url.Action("deletedata", new {id=data.id})"><i class="material-icons" style="color:red;">delete</i></a></button></td>
+                    </tr>
                 }
             </table>
         </div>
